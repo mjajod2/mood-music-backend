@@ -4,6 +4,9 @@ from .mood_to_genre import moodToGenre
 
 from flask_cors import CORS
 
+'''
+This function creates the app and registers the blueprint
+'''
 def create_app():
     app = Flask(__name__)
     CORS(app, supports_credentials=True)

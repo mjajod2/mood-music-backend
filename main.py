@@ -1,6 +1,9 @@
 from api import create_app
 import os
 
+'''
+This script runs the app
+'''
 app = create_app()
 
 if __name__ == "__main__":
