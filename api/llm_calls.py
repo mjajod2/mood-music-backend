@@ -1,7 +1,13 @@
 from google import genai
+import os
+from dotenv import load_dotenv
 
-client = genai.Client(api_key="AIzaSyAFFGggwcKwa_9ABXTMZTaAWgIn4A5Nm6c")
+load_dotenv()
+api_key = os.getenv('GEMINI_API_KEY')
 
+client = genai.Client(api_key=api_key)
+
+print(os.environ.get('GEMINI_API_KEY'))
 def send_genre_request_to_llm(query_text):
     response = client.models.generate_content(
     model="gemini-2.0-flash", contents=f"what type of music genre fits the following mood description: {query_text}? Only tell me genre name")  # need to pass the query sentence here instead of the hardcoded one
